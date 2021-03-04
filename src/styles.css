@@ -1,0 +1,23 @@
+*{
+    margin: 0px 0px;
+    font-family: sans-serif;
+    
+}
+
+.highlight{
+    background-color: rgb(206, 252, 240) !important;
+    border: 2px solid rgb(139, 247, 220);
+    padding: 5px;
+    border-radius: 10px;
+}
+.mat-ink-bar{
+    background-color: #1A6ED2 !important;
+}
+
+.afu-valid-file{
+    display: flex;
+    justify-content: center;
+}
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
