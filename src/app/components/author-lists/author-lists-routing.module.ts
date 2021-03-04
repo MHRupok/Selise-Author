@@ -5,7 +5,11 @@ import { AuthorListsComponent } from './author-lists.component';
 
 
 const routes: Routes = [
-{path:'',component:AuthorListsComponent}];
+{path:'',component:AuthorListsComponent}
+
+
+
+];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],

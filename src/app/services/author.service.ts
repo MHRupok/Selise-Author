@@ -5,12 +5,19 @@ import { HttpClient} from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthorService {
-  url = 'https://api.quotable.io/authors?limit=20&skip=20'
+  url = ''
+  baseUrl = 'https://api.quotable.io/authors?'
+  pageSkip = 20;
+  page = 0;
+  pageLimit = 20;
   constructor(private http:HttpClient) { 
     
   }
 
   getAuthors(){
+    sessionStorage.getItem('authorPage') || 0;
+    this.page = parseInt(sessionStorage.getItem('authorPage'));
+    this.url = this.baseUrl+"limit="+this.pageLimit+"&skip="+this.pageSkip*this.page;
     return this.http.get(this.url);
   }
 }

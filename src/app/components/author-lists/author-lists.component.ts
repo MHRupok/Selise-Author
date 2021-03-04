@@ -10,17 +10,39 @@ export class AuthorListsComponent implements OnInit {
 
   authorList: any;
   apiData: any;
-  apiHit :any;
+  startPage = 1;
+  pagination = 10;
+
   constructor(private author: AuthorService) {
-    this.author.getAuthors().subscribe((authors) => {
+    sessionStorage.getItem('authorPage') || '0';
+    this.author.getAuthors().subscribe((authors: any) => {
       this.apiData = authors;
-      this.authorList = authors['results'];      
-      this.apiHit = 'api'
+      this.authorList = authors['results'];
+      console.log("constructor");
+      console.log(this.authorList);
+      
+      
     })
-    
+
   }
   ngOnInit(): void {
-   
+    console.log("on init api call");
+    
+    this.apiCall();
+    console.log(this.authorList);
+  }
+
+  apiCall() {
+    this.author.getAuthors().subscribe((authors) => {
+      this.apiData = authors;
+      this.authorList = authors['results'];
+    })
+  }
+
+  goToPage(val: any) {
+    this.author.page = val;
+    sessionStorage.setItem('authorPage', val)
+    this.apiCall()
   }
 
 }
