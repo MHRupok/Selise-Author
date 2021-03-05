@@ -1,0 +1,8 @@
+<app-list-items [authorList] = "favouriteList" (favouriteEvent)="favourites($event)"></app-list-items>
+<div *ngIf="noFeed == 'noFeed'">
+    <div class="card text-center">
+        <div class="card-body">
+            <h2>No Favourites In The List</h2>
+        </div>
+    </div>
+</div>

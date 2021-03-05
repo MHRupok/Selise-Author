@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-md-6" *ngFor="let name of authorList">
+        <div style="padding-bottom: 20px;">
+            <div class="card ">
+                <div class="card-header text-center">
+                    {{name.name}}
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">BIO</h5>
+                    <p class="card-text">{{name.bio}}</p>
+
+                    <a class="btn btn-outline-secondary" (click)="favourite(name._id)">
+
+                        <span *ngIf="name.favourites=='love'; else add">Remove Favourites</span>
+                        <span *ngIf="name.favourites!='love'; else add">add Favourites</span>
+                        <span>&nbsp;</span>
+                        <span class="{{name.favourites}}">
+                            <i class="fas fa-heart"></i>
+                        </span>
+                    </a>
+
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

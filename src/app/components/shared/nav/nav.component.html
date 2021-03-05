@@ -1,0 +1,39 @@
+<div class="main-nav {{ sideToggle }}">
+    <div class="main-header">
+        <div class="logo-header">
+            <a href="/" class="logo">
+                <img src="assets/images/logo.png" alt="" style="height: 50px !important;">
+            </a>
+            <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
+                data-target="collapse" aria-controls="sidebar" aria-expanded="false" aria-label="Toggle navigation"
+                (click)="toggleSidenav()">
+                <span class="navbar-toggler-icon">
+                    <i class="fa fa-bars"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+    <div class="sidebar">
+        <div class="scrollbar-inner sidebar-wrapper">
+            <div class="side-menus">
+                <div class="author-list">
+                    <div class="info">
+                        <ul class="nav">
+                            <li>
+                                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                                    <p class="dropdown-heading">Author List</p>
+                                </a>
+                            </li>
+                            <li>
+                                <a routerLink="favourites" routerLinkActive="active" >
+                                    <p class="dropdown-heading">Favourite List</p>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
