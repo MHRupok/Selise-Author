@@ -20,12 +20,12 @@
                     <div class="info">
                         <ul class="nav">
                             <li>
-                                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">
+                                <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" (click)="closeSideNav()">
                                     <p class="dropdown-heading">Author List</p>
                                 </a>
                             </li>
                             <li>
-                                <a routerLink="favourites" routerLinkActive="active" >
+                                <a routerLink="favourites" routerLinkActive="active" (click)="closeSideNav()" >
                                     <p class="dropdown-heading">Favourite List</p>
                                 </a>
                             </li>
