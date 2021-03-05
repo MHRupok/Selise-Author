@@ -21,15 +21,20 @@ export class ListItemComponent implements OnInit, OnChanges {
   favourites = [];
 
   constructor() {
-    let temp = localStorage.getItem('favourites') || "0";
-    this.favourites = JSON.parse(temp);
-
 
   }
 
   ngOnInit(): void {
     this.authorName = this.authorList;
+    let temp = localStorage.getItem('favourites');
+    try{
+      if(temp.length>0){
+        this.favourites = JSON.parse(temp);
+      }
+    }
+    catch{
 
+    }   
 
   }
 
@@ -51,8 +56,8 @@ export class ListItemComponent implements OnInit, OnChanges {
           }
         }
         else {
-          this.authorName[x]['favourites'] = 'love'
-          this.favourites.push(this.authorName[x])
+          this.authorName[x]['favourites'] = 'love';
+          this.favourites.push(this.authorName[x]);
         }
       }
     }
