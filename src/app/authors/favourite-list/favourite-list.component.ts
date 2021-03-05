@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthorService } from 'src/app/services/author.service';
 
 @Component({
   selector: 'app-favourite-list',
@@ -8,12 +9,17 @@ import { Component, OnInit } from '@angular/core';
 export class FavouriteListComponent implements OnInit {
   favouriteList = [];
   noFeed = '';
-  constructor() {
+  endPage = 0;
+  temp = []
+  page = 0;
+  constructor(private author:AuthorService) {
     let temp = localStorage.getItem('favourites');
     let t = JSON.parse(temp);
     if (t != null) {
       this.favouriteList = t;
       this.noFeed = '';
+      this.calculatePages();
+           
     }
     if (this.favouriteList.length == 0) {
       this.noFeed = 'noFeed';
@@ -33,9 +39,38 @@ export class FavouriteListComponent implements OnInit {
         this.favouriteList.splice(y, 1);
       }
     }
-    this.noFeed = 'noFeed';
+    if (this.favouriteList.length == 0) {
+      this.noFeed = 'noFeed';
+
+    }
     localStorage.setItem('favourites', JSON.stringify(this.favouriteList))
 
+  }
+
+  calculatePages(){
+        
+    let page = Math.floor(this.favouriteList.length / this.author.pageLimit);
+    if(page<1){
+      this.endPage = 0;
+    } 
+    else{
+      this.endPage = page;
+      
+    }
+    this.temp = this.favouriteList;
+    console.log(this.temp);
+    
+   
+  }
+  getPage(val:any){
+    this.page = val + 1;
+    let last = this.page * this.author.pageLimit;
+    let start = last - this.author.pageLimit;
+    for(let x = start;x<last;x++){
+      this.temp.push(this.favouriteList[x])
+    }
+    
+    
   }
 
 }

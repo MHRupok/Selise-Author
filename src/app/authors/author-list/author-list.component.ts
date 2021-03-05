@@ -16,7 +16,8 @@ export class AuthorListComponent implements OnInit, OnChanges {
   nextPageBtn = '';
   lastPageBtn = '';
   favouriteList = [];
-
+  endPage = 0;
+  preloader = 'load';
   constructor(private author: AuthorService) {
 
     this.callApi();
@@ -42,7 +43,9 @@ export class AuthorListComponent implements OnInit, OnChanges {
     this.author.getAuthors().subscribe((authors) => {
       this.authorList = authors['results'];
       this.totalCount = authors['totalCount'];
+      this.endPage = Math.floor(this.totalCount/this.author.pageLimit);
       this.checkFavourites();
+      this.preloader = 'none';
     })
   }
 
@@ -149,5 +152,7 @@ export class AuthorListComponent implements OnInit, OnChanges {
     }
 
   }
+
+
 
 }

@@ -1,5 +1,12 @@
+
+<div *ngIf="preloader =='load'" class="text-center">
+    <div  class="spinner-border" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
 <app-list-items [authorList]="authorList" (favouriteEvent)="favourites($event)"></app-list-items>
-<nav aria-label="Page navigation example">
+<nav *ngIf="preloader !='load'" aria-label="Page navigation example">
     <ul class="pagination justify-content-end">
         <li class="page-item {{firstPageBtn}}">
             <a class="page-link" (click)="firstPage()"><i class="fas fa-angle-double-left"></i></a>
