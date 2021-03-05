@@ -7,9 +7,9 @@ import { HttpClient} from '@angular/common/http';
 export class AuthorService {
   url = ''
   baseUrl = 'https://api.quotable.io/authors?'
-  pageSkip = 20;
+  pageSkip = 10;
   page = 0;
-  pageLimit = 20;
+  pageLimit = 10;
   constructor(private http:HttpClient)  { 
     
   }
