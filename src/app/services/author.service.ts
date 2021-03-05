@@ -10,14 +10,18 @@ export class AuthorService {
   pageSkip = 20;
   page = 0;
   pageLimit = 20;
-  constructor(private http:HttpClient) { 
+  constructor(private http:HttpClient)  { 
     
   }
 
+  // getAuthors(){
+  //   this.page = parseInt(sessionStorage.getItem('authorPage') || '0');
+  //   this.url = this.baseUrl+"limit="+this.pageLimit+"&skip="+this.pageSkip*this.page;
+  //   return this.http.get(this.url);
+  // }
   getAuthors(){
-    sessionStorage.getItem('authorPage') || 0;
-    this.page = parseInt(sessionStorage.getItem('authorPage'));
-    this.url = this.baseUrl+"limit="+this.pageLimit+"&skip="+this.pageSkip*this.page;
-    return this.http.get(this.url);
+    this.page = parseInt(sessionStorage.getItem('authorPage') || '0');
+    let pageskip = this.pageSkip * this.page;
+    return this.http.get<any>(this.baseUrl, {params: {limit: this.pageLimit.toString(), skip:pageskip.toString()}});
   }
 }

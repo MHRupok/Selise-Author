@@ -5,8 +5,8 @@ import { FavouriteListComponent } from './components/favourite-list/favourite-li
 
 
 const routes: Routes = [
-  // { path: '', loadChildren: () => import('./components/author-lists/author-lists.module').then(m => m.AuthorListsModule) },
-  {path:'facourites',component:FavouriteListComponent}
+  { path: '', loadChildren: async () => import('./components/author-lists/author-lists.module').then(m => m.AuthorListsModule) },
+  {path:'favourites',component:FavouriteListComponent}
 ];
 
 @NgModule({

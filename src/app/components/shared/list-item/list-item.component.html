@@ -8,7 +8,17 @@
                 <div class="card-body">
                     <h5 class="card-title">BIO</h5>
                     <p class="card-text">{{name.bio}}</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+
+                    <a class="btn btn-outline-secondary" (click)="favourite(name._id)">
+
+                        <span *ngIf="name.favourites=='love'; else add">Remove Favourites</span>
+                        <span *ngIf="name.favourites!='love'; else add">add Favourites</span>
+                        <span>&nbsp;</span>
+                        <span class="{{name.favourites}}">
+                            <i class="fas fa-heart"></i>
+                        </span>
+                    </a>
+
                 </div>
                 <div class="card-footer text-muted">
                     2 days ago
@@ -25,7 +35,7 @@
         </li>
         <li class="page-item {{previousPageBtn}}"><a class="page-link" (click)="previousPage()"><i
                     class="fas fa-angle-left"></i></a></li>
-        <li class="page-item active   "><a class="page-link">{{page}}</a></li>
+        <li class="page-item active   "><a class="page-link">{{showpage}}</a></li>
         <li class="page-item {{nextPageBtn}}"><a class="page-link" (click)="nextPage()"><i
                     class="fas fa-angle-right"></i></a></li>
         <li class="page-item {{lastPageBtn}}">

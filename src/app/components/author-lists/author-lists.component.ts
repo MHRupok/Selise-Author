@@ -9,32 +9,26 @@ import { AuthorService } from 'src/app/services/author.service';
 export class AuthorListsComponent implements OnInit {
 
   authorList: any;
-  apiData: any;
+  totalCount: any;
   startPage = 1;
   pagination = 10;
 
   constructor(private author: AuthorService) {
     sessionStorage.getItem('authorPage') || '0';
     this.author.getAuthors().subscribe((authors: any) => {
-      this.apiData = authors;
-      this.authorList = authors['results'];
-      console.log("constructor");
-      console.log(this.authorList);
-      
-      
+      this.totalCount = authors['totalCount'];
+      this.authorList = authors['results'];   
     })
 
   }
   ngOnInit(): void {
     console.log("on init api call");
-    
     this.apiCall();
-    console.log(this.authorList);
   }
 
   apiCall() {
     this.author.getAuthors().subscribe((authors) => {
-      this.apiData = authors;
+      this.totalCount = authors['totalCount'];
       this.authorList = authors['results'];
     })
   }
