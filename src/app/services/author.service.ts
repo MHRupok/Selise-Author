@@ -14,11 +14,6 @@ export class AuthorService {
     
   }
 
-  // getAuthors(){
-  //   this.page = parseInt(sessionStorage.getItem('authorPage') || '0');
-  //   this.url = this.baseUrl+"limit="+this.pageLimit+"&skip="+this.pageSkip*this.page;
-  //   return this.http.get(this.url);
-  // }
   getAuthors(){
     // this.page = parseInt(sessionStorage.getItem('authorPage') || '0');
     let pageskip = this.pageSkip * this.page;

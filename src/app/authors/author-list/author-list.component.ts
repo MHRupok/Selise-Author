@@ -25,10 +25,7 @@ export class AuthorListComponent implements OnInit, OnChanges {
     let t = JSON.parse(temp);
     if(t != null){
       this.favouriteList = t;
-      
     }
-    
-    
   }
 
   ngOnChanges(): void {
@@ -133,22 +130,18 @@ export class AuthorListComponent implements OnInit, OnChanges {
       this.nextPageBtn = 'disabled';
       this.previousPageBtn = '';
       this.firstPageBtn = '';
-
     }
     else if (this.page == 0) {
       this.firstPageBtn = 'disabled';
       this.previousPageBtn = 'disabled';
       this.nextPageBtn = '';
       this.lastPageBtn = '';
-
     }
     else {
       this.previousPageBtn = '';
       this.firstPageBtn = '';
       this.nextPageBtn = '';
       this.lastPageBtn = '';
-
-
     }
 
   }

@@ -20,9 +20,9 @@ export class ListItemsComponent implements OnInit {
   }
 
   ngOnChanges() {
- 
+
   }
-  favourite(val: any){
+  favourite(val: any) {
     this.favouriteEvent.emit(val);
   }
 

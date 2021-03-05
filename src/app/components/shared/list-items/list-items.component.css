@@ -5,6 +5,15 @@
     overflow-y: auto;
     max-height: 180px;
 }
+.card{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 7px;
+    background-color: rgb(255, 255, 255);
+}
+
+.link{
+    color: #49aa62 !important;
+}
 .card:hover{
-    border:solid 2px rgb(0, 162, 255);
+    border:solid 2px #74D68C;
 }

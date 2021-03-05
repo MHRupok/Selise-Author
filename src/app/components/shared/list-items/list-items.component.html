@@ -2,21 +2,15 @@
     <div class="col-md-6" *ngFor="let name of authorList; let i = index">
         <div style="padding-bottom: 20px">
             <div class="card" style="height: 300px;">
-                <!-- <div class="card-header text-center">
-                    {{name.name}}
-                </div> -->
                 <div class="card-body">
-
                     <h5 class="card-title">{{name.name}}</h5>
                     <div class="scrollable">
                         <p class="card-text">{{name.bio}}</p>
-                        <br>
-                        <p>source: <a href="{{name.link}}">{{name.link}}</a></p>
+                        <p>source: <a class="link" href="{{name.link}}">{{name.link}}</a></p>
                     </div>
-
                 </div>
                 <div class="card-footer text-muted">
-                    <a class="btn btn-outline-secondary" (click)="favourite(name._id)">
+                    <a class="btn btn-outline-success" (click)="favourite(name._id)">
 
                         <span *ngIf="name.favourites=='love'; else add">Remove Favourites</span>
                         <span *ngIf="name.favourites!='love'; else add">Add Favourites</span>

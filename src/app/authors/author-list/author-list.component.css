@@ -11,6 +11,16 @@
     left: 0;
     bottom: 0;
     right: 0;
-    color: rgb(26, 207, 252);
+    color: #74D68C;
     
+}
+
+.page-link{
+    color: #74D68C;
+}
+
+.page-item.active .page-link{
+    background-color: #74D68C !important;
+    border-color: #74D68C !important;
+    color: black;
 }
