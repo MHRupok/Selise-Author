@@ -21,7 +21,8 @@
   padding-left: 20px;
   align-items: center;
   /* z-index: 1001; */
-  background-color: #1a6ed2;
+  /* background-color: #1a6ed2; */
+  background-color: #57a36c;
 }
 .main-header .logo-header a.logo {
   color: white;
@@ -63,7 +64,8 @@
   z-index: 1;
   color: #ffffff;
   font-weight: 200;
-  background-color: #2680eb;
+  /* background-color: #2680eb; */
+  background-color: #5DAD73;
   /* background-size: cover; */
   background-position: center center;
   border-right: 1px solid #eee;

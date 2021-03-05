@@ -23,7 +23,7 @@ export class NavComponent implements OnInit {
 
     }
   }
-  closeSideNav(){
+  closeSideNav() {
     this.sideToggle = 'none'
   }
 

@@ -4,9 +4,11 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {path:'', loadChildren: () => import ('./authors/authors.module').then(
-    m => m.AuthorsModule
-  )}
+  {
+    path: '', loadChildren: () => import('./authors/authors.module').then(
+      m => m.AuthorsModule
+    )
+  }
 ];
 
 @NgModule({
