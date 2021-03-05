@@ -15,7 +15,6 @@ export class NavComponent implements OnInit {
   }
 
   toggleSidenav() {
-    console.log('toggle');
     if (this.sideToggle == 'none') {
       this.sideToggle = 'nav_open';
     }
@@ -23,6 +22,9 @@ export class NavComponent implements OnInit {
       this.sideToggle = 'none'
 
     }
+  }
+  closeSideNav(){
+    this.sideToggle = 'none'
   }
 
 }
