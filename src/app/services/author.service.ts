@@ -20,7 +20,7 @@ export class AuthorService {
   //   return this.http.get(this.url);
   // }
   getAuthors(){
-    this.page = parseInt(sessionStorage.getItem('authorPage') || '0');
+    // this.page = parseInt(sessionStorage.getItem('authorPage') || '0');
     let pageskip = this.pageSkip * this.page;
     return this.http.get<any>(this.baseUrl, {params: {limit: this.pageLimit.toString(), skip:pageskip.toString()}});
   }

@@ -73,14 +73,9 @@ export class ListItemComponent implements OnInit, OnChanges {
               this.authorName[x]['favourites'] = 'love'
               break
             }
-
-
           }
         }
-
-
       }
-      // console.log(this.favourites);
 
     }
     catch {
